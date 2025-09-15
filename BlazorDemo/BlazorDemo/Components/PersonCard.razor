@@ -1,0 +1,12 @@
+@using BlazorDemo.Models
+@using BlazorDemo.Pages
+
+@code {
+    [Parameter]
+    public Person PersonInfo { get; set; }
+}
+<div class="card">
+    <h3>@PersonInfo.Name</h3>
+    <p>Leeftijd: @PersonInfo.Age</p>
+    <p>Woonplaats: @PersonInfo.City</p>
+</div>

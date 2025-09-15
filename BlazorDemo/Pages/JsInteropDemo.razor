@@ -1,0 +1,16 @@
+@page "/jsinterop-demo"
+@inject IJSRuntime JS
+
+<link rel="stylesheet" href="css/JsInteropDemo.css" />
+
+<div class="jsinterop-card">
+    <h3>JSInterop Demo</h3>
+    <button @onclick="ShowAlert">Toon Alert via JSInterop</button>
+</div>
+
+@code {
+    private async Task ShowAlert()
+    {
+        await JS.InvokeVoidAsync("showAlert", "Hallo vanuit JavaScript!");
+    }
+}

@@ -1,0 +1,35 @@
+@page "/formvalidation-demo"
+@using System.ComponentModel.DataAnnotations
+<link rel="stylesheet" href="css/FormValidationDemo.css" />
+
+<div class="form-card">
+    <h3>Formulier & Validatie Demo</h3>
+    <EditForm Model="persoon" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary class="validation-summary" />
+        <div>
+            <label>Naam:</label>
+            <InputText @bind-Value="persoon.Naam" />
+        </div>
+        <div>
+            <label>Leeftijd:</label>
+            <InputNumber @bind-Value="persoon.Leeftijd" />
+        </div>
+        <button type="submit">Verstuur</button>
+    </EditForm>
+    <p>@result</p>
+</div>
+
+@code {
+    private Persoon persoon = new();
+    private string result = "";
+    private void HandleValidSubmit() => result = $"Welkom, {persoon.Naam} ({persoon.Leeftijd})!";
+
+    public class Persoon
+    {
+        [Required]
+        public string Naam { get; set; } = "";
+        [Range(1, 100)]
+        public int Leeftijd { get; set; }
+    }
+}

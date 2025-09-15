@@ -1,0 +1,19 @@
+@page "/lifecycle-demo"
+<link rel="stylesheet" href="css/LifecycleDemo.css" />
+
+<div class="lifecycle-card">
+    <h3>Lifecycle Demo</h3>
+    <p>@(isLoading ? "Component wordt geïnitialiseerd..." : initMessage)</p>
+</div>
+
+@code {
+    private string initMessage = "";
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(2000);
+        initMessage = "Component is geïnitialiseerd!";
+        isLoading = false;
+    }
+}

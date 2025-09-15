@@ -1,0 +1,12 @@
+@page "/di-demo"
+@inject NavigationManager Navigation
+<link rel="stylesheet" href="css/DependencyInjectionDemo.css" />
+
+<div class="di-card">
+    <h3>Dependency Injection Demo</h3>
+    <button @onclick="GaNaarHome">Ga naar home</button>
+</div>
+
+@code {
+    private void GaNaarHome() => Navigation.NavigateTo("/");
+}

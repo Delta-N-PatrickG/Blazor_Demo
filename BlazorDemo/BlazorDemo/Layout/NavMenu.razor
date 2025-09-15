@@ -1,0 +1,69 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorDemo</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="jsinterop-demo">
+                <span class="bi bi-code-slash-nav-menu" aria-hidden="true"></span> JSInterop Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="routing-demo/1">
+                <span class="bi bi-arrow-right-circle-nav-menu" aria-hidden="true"></span> Routing Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="component-demo">
+                <span class="bi bi-box-nav-menu" aria-hidden="true"></span> Component Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="eventcallback-demo">
+                <span class="bi bi-lightning-nav-menu" aria-hidden="true"></span> EventCallback Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="databinding-demo">
+                <span class="bi bi-link-nav-menu" aria-hidden="true"></span> DataBinding Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="di-demo">
+                <span class="bi bi-diagram-nav-menu" aria-hidden="true"></span> DI Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="lifecycle-demo">
+                <span class="bi bi-clock-nav-menu" aria-hidden="true"></span> Lifecycle Demo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="formvalidation-demo">
+                <span class="bi bi-check2-circle-nav-menu" aria-hidden="true"></span> Form Validatie Demo
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

@@ -1,0 +1,12 @@
+@page "/databinding-demo"
+<link rel="stylesheet" href="css/DataBindingDemo.css" />
+
+<div class="binding-card">
+    <h3>Data Binding Demo</h3>
+    <input @bind="name" placeholder="Naam invoeren" />
+    <p>Hallo, @name!</p>
+</div>
+
+@code {
+    private string name = "";
+}

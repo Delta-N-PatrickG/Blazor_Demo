@@ -1,0 +1,13 @@
+@page "/eventcallback-demo"
+<link rel="stylesheet" href="css/EventCallbackDemo.css" />
+
+<div class="event-card">
+    <h3>EventCallback Demo</h3>
+    <button @onclick="OnButtonClick">Klik mij!</button>
+    <p>@message</p>
+</div>
+
+@code {
+    private string message = "";
+    private void OnButtonClick() => message = "Button is geklikt!";
+}

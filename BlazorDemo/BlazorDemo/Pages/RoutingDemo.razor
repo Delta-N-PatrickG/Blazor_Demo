@@ -1,0 +1,12 @@
+@page "/routing-demo/{id:int}"
+<link rel="stylesheet" href="css/RoutingDemo.css" />
+
+<div class="route-card">
+    <h3>Routing Demo</h3>
+    <p>Route parameter: <b>@Id</b></p>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+}

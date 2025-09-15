@@ -1,0 +1,13 @@
+@page "/component-demo"
+@using BlazorDemo.Models
+@using BlazorDemo.Components
+<link rel="stylesheet" href="css/ComponentDemo.css" />
+
+<div class="component-card">
+    <h3>Component Demo</h3>
+    <PersonCard PersonInfo="person" />
+</div>
+
+@code {
+    private Person person = new Person { Name = "Jan", Age = 30, City = "Utrecht" };
+}

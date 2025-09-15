@@ -1,0 +1,29 @@
+/* EventCallbackDemo.css */
+.event-card {
+    max-width: 350px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fdf6e3;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    text-align: center;
+}
+.event-card h3 {
+    color: #e67e22;
+}
+.event-card button {
+    background: #e67e22;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.event-card button:hover {
+    background: #ca6f1e;
+}
+.event-card p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
